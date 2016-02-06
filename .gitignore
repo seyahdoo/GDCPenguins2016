@@ -1,0 +1,50 @@
+# =============== #
+# Unity generated #
+# =============== #
+[Tt]emp/
+[Oo]bj/
+[Bb]uild
+[Ll]ibrary/
+[Ee]xports/
+sysinfo.txt
+/*.apk
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+[Ee]xported[Oo]bj/
+/*.userprefs
+/*.csproj
+/*.pidb
+/*.suo
+/*.sln*
+/*.user
+/*.unityproj
+/*.booproj
+
+# ===================================== #
+# Others / Resharper                    #
+# ===================================== #
+
+[_]ReSharper.HordemasterV5-csharp/
+/*.user
+/*.DotSettings
+/*.Thumbs
+/*.Thumbs.meta
+/*.Thumbs.db.meta
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+[Tt]humbs.db
+Assets/Sprites/boss/bite/Thumbs.db.meta
+Assets/Sprites/icons.meta
+Assets/Thumbs.db.meta
+Assets/Sprites/Thumbs.db.meta
+Assets/Sprites/boss/leganim/attack/Thumbs.db.meta
