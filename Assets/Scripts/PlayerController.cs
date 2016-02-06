@@ -3,51 +3,59 @@ using System.Collections;
 
 using Globals;
 
-[RequireComponent(typeof(CharacterMotor))]
-[RequireComponent(typeof(CharacterController))]
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
 
+    //private CharacterMotor _motor;
+    //private CharacterController _controller;
+    //private Transform _playerTransform;
 
-    private CharacterMotor _motor;
-    private CharacterController _controller;
 
-    private Transform _playerTransform;
-
-    public Vector3 moveDir;
+    public Vector3 MoveDir;
+    public Vector2 LookDir;
 
     void Awake()
     {
 
-        _playerTransform = transform;
-        _motor = GetComponent<CharacterMotor>();
-        _controller = GetComponent<CharacterController>();
-
-        //force motor to be controllable
-        if (!_motor.canControl)
-        {
-            _motor.canControl = true;
-        }
+        //_playerTransform = transform;
+        //_motor = GetComponent<CharacterMotor>();
+        //_controller = GetComponent<CharacterController>();
 
     }
 
     void Update()
     {
 
+        #region Calculate MoveDir
+        MoveDir.x = Input.GetAxis(PlayerInput.Horizontal);
+        MoveDir.y = 0f;
+        MoveDir.z = Input.GetAxis(PlayerInput.Vertical);
 
-        moveDir.x = Input.GetAxis(PlayerInput.Horizontal);
-        moveDir.y = 0f;
-        moveDir.z = Input.GetAxis(PlayerInput.Vertical);
+        //normalize move dir if not normal!?
+        if (MoveDir.magnitude > 1) MoveDir = MoveDir.normalized;
 
-        if (moveDir.magnitude > 1) moveDir = moveDir.normalized;
+        //Move Direction is calculated here
 
-        _motor.inputMoveDirection = moveDir;
+        //moveDir
 
-        _motor.inputJump = Input.GetButtonDown(PlayerInput.Jump);
+        //send moveDir
+        #endregion
 
-        
+        #region Jump Input
+        //send jump input 
+
+        // Input.GetButtonDown(PlayerInput.Jump);
+        #endregion
+
+        #region Calculate LookDir
+
+
+
+        #endregion
+
     }
 
 
-	
+
 }

@@ -27,17 +27,17 @@ public class ScientistCameraBehaviour : MonoBehaviour {
 
         #region Cursor Locking
         //handle cursor locking
-        if (Input.GetButtonDown(PlayerInput.CameraLock))
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-
-        if (Input.GetButtonDown(PlayerInput.CameraUnlock))
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None; /// TODO maybe .Confined
-        }
+        //if (Input.GetButtonDown(PlayerInput.CameraLock))
+        //{
+        //    Cursor.visible = false;
+        //    Cursor.lockState = CursorLockMode.Locked;
+        //}
+        //
+        //if (Input.GetButtonDown(PlayerInput.CameraUnlock))
+        //{
+        //    Cursor.visible = true;
+        //    Cursor.lockState = CursorLockMode.None; /// TODO maybe .Confined
+        //}
         #endregion
 
         #region Camera Rotation
