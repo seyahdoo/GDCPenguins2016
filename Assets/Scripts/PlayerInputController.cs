@@ -3,27 +3,21 @@ using System.Collections;
 
 using Globals;
 
-public class PlayerController : MonoBehaviour
+public class PlayerInputController : MonoBehaviour
 {
-
-
-    //private CharacterMotor _motor;
-    //private CharacterController _controller;
-    //private Transform _playerTransform;
-
-
+    
     public Vector3 MoveDir;
     public Vector2 LookDir;
 
-    public Vector2 MouseCordNow;
+    private Vector2 MouseCordNow;
+    private Vector2 MouseCordLast;
+    public Vector2 MouseDelta;
 
+    
     void Awake()
     {
 
-        //_playerTransform = transform;
-        //_motor = GetComponent<CharacterMotor>();
-        //_controller = GetComponent<CharacterController>();
-
+        
     }
 
     void Update()
@@ -53,7 +47,11 @@ public class PlayerController : MonoBehaviour
         #region Calculate LookDir
         MouseCordNow = Input.mousePosition;
 
+        MouseDelta = MouseCordNow - MouseCordLast;
 
+
+
+        MouseCordLast = MouseCordNow;
         #endregion
 
     }
