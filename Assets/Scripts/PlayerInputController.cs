@@ -19,12 +19,31 @@ public class PlayerInputController : MonoBehaviour
 
     void Update()
     {
+        
+        CursorLocking();
+
         CalculateMoveDir();
 
         CalculateLookDir();
 
     }
 
+    private void CursorLocking()
+    {
+
+        if (Input.GetButtonDown(PlayerInput.CameraLock))
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        if (Input.GetButtonDown(PlayerInput.CameraUnlock))
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None; /// TODO maybe .Confined
+        }
+
+    }
 
     private void CalculateMoveDir()
     {

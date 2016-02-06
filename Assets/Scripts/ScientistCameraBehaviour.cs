@@ -16,52 +16,22 @@ public class ScientistCameraBehaviour : MonoBehaviour {
     public LayerMask WhatToInteract;
     public bool IsHit;
     public bool IsGrabbing;
+    
+    public Vector3 hitPoint;
 
-    
-    
+
+
     //TODO are we locking cursor on start?
 
 
     void Update()
     {
 
-        #region Cursor Locking
-        //handle cursor locking
-        if (Input.GetButtonDown(PlayerInput.CameraLock))
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        
-        if (Input.GetButtonDown(PlayerInput.CameraUnlock))
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None; /// TODO maybe .Confined
-        }
-        #endregion
-
-        #region Camera Rotation
-        //handle camera rotation!
-        //code here
-
-        //calculate x delta movement
-        //calculate y delta movement
-
-
-
-
-
-        #endregion
-
-        if (Input.GetButtonDown(PlayerInput.Use))
-        {
-            Debug.Log("asdsad");
-        }
-
 
         #region Camera Interaction AKA use button interactivity
         if (Input.GetButtonDown(PlayerInput.Use) && (!IsGrabbing))
         {
+            Debug.Log("Pressed Use, not grabbing now(obviously), Raycasting.");
             //interact from camera!
             Ray ray = PlayerCamera.ScreenPointToRay(
                 new Vector3(
@@ -75,7 +45,9 @@ public class ScientistCameraBehaviour : MonoBehaviour {
 
             if (IsHit)
             {
+                Debug.Log("Its an hit!");
                 TargetObject = hit.transform.gameObject;
+                hitPoint = hit.point;
                 //TargetObject.name = "asdasd";
                 //TargetObject.SetActive(false);
                 StartCoroutine(Grabbing());
@@ -96,13 +68,32 @@ public class ScientistCameraBehaviour : MonoBehaviour {
         }
         IsGrabbing = true;
         Debug.Log("Grabbed! " + TargetObject.name);
+
+        //enable target
+        TargetIndicator.SetActive(true);
+        TargetIndicator.transform.position = hitPoint;
+        //attach joint here!
+        
         //Grabbed!
         while (Input.GetButton(PlayerInput.Use))
         {
             Debug.Log("Physicing " + TargetObject.name);
+
+            //then we handle scroll lock delta
+            //Input.mouseScrollDelta
+            
+
+
             yield return new WaitForEndOfFrame();
         }
-        
+        Debug.Log("Grap Ended");
+
+        //Detach joint 
+
+        //disable target
+        TargetIndicator.SetActive(false);
+
+
         IsGrabbing = false;
         yield break;
     }
