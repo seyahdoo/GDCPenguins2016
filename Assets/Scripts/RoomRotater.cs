@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class RoomRotater : MonoBehaviour
+public class RoomController : MonoBehaviour
 {
 
     public PlayerInputController PlayerIC;
