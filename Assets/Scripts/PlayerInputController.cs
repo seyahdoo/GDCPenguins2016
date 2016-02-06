@@ -3,6 +3,8 @@ using System.Collections;
 
 using Globals;
 
+
+
 public class PlayerInputController : MonoBehaviour
 {
     
@@ -13,23 +15,16 @@ public class PlayerInputController : MonoBehaviour
     private Vector2 MouseCordLast;
     public Vector2 MouseDelta;
 
-    
-    void Awake()
-    {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-
-    }
+    public float Mouse_Sensivity = 30;
 
     void Update()
     {
         CalculateMoveDir();
 
-        JumpInput();
-
         CalculateLookDir();
 
     }
+
 
     private void CalculateMoveDir()
     {
@@ -48,20 +43,15 @@ public class PlayerInputController : MonoBehaviour
         //send moveDir
     }
 
-    private void JumpInput()
-    {
-        //send jump input 
-
-        // Input.GetButtonDown(PlayerInput.Jump);
-    }
 
     private void CalculateLookDir()
     {
-        MouseCordNow = Input.mousePosition;
+        MouseDelta = new Vector2(Input.GetAxis(PlayerInput.MouseX), Input.GetAxis(PlayerInput.MouseY)) * Mouse_Sensivity;
 
-        MouseDelta = MouseCordNow - MouseCordLast;
-
-
-        MouseCordLast = MouseCordNow;
+        //Input.GetAxis(PlayerInput.MouseX);
+        //Input.GetAxis(PlayerInput.MouseY);
+        //MouseCordNow = Input.mousePosition;
+        //MouseDelta = MouseCordNow - MouseCordLast;
+        //MouseCordLast = MouseCordNow;
     }
 }
