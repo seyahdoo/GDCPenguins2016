@@ -16,46 +16,52 @@ public class PlayerInputController : MonoBehaviour
     
     void Awake()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
-        
     }
 
     void Update()
     {
+        CalculateMoveDir();
 
-        #region Calculate MoveDir
+        JumpInput();
+
+        CalculateLookDir();
+
+    }
+
+    private void CalculateMoveDir()
+    {
         MoveDir.x = Input.GetAxis(PlayerInput.Horizontal);
         MoveDir.y = 0f;
         MoveDir.z = Input.GetAxis(PlayerInput.Vertical);
 
         //normalize move dir if not normal!?
         if (MoveDir.magnitude > 1) MoveDir = MoveDir.normalized;
+        
 
         //Move Direction is calculated here
 
         //moveDir
 
         //send moveDir
-        #endregion
+    }
 
-        #region Jump Input
+    private void JumpInput()
+    {
         //send jump input 
 
         // Input.GetButtonDown(PlayerInput.Jump);
-        #endregion
+    }
 
-        #region Calculate LookDir
+    private void CalculateLookDir()
+    {
         MouseCordNow = Input.mousePosition;
 
         MouseDelta = MouseCordNow - MouseCordLast;
 
 
-
         MouseCordLast = MouseCordNow;
-        #endregion
-
     }
-
-
-
 }
