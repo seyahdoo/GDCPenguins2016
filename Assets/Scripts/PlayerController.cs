@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public Vector3 MoveDir;
     public Vector2 LookDir;
 
+    public Vector2 MouseCordNow;
+
     void Awake()
     {
 
@@ -49,7 +51,7 @@ public class PlayerController : MonoBehaviour
         #endregion
 
         #region Calculate LookDir
-
+        MouseCordNow = Input.mousePosition;
 
 
         #endregion
