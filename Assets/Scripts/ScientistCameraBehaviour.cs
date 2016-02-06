@@ -18,8 +18,8 @@ public class ScientistCameraBehaviour : MonoBehaviour {
     public bool IsGrabbing;
     
     public Vector3 hitPoint;
-
-
+    public Vector3 distVect;
+    public float distance;
 
     //TODO are we locking cursor on start?
 
@@ -72,7 +72,10 @@ public class ScientistCameraBehaviour : MonoBehaviour {
         //enable target
         TargetIndicator.SetActive(true);
         TargetIndicator.transform.position = hitPoint;
+
         //attach joint here!
+        //get distance
+        distVect = hitPoint - transform.position;
         
         //Grabbed!
         while (Input.GetButton(PlayerInput.Use))
@@ -81,8 +84,8 @@ public class ScientistCameraBehaviour : MonoBehaviour {
 
             //then we handle scroll lock delta
             //Input.mouseScrollDelta
-            
-
+            //TargetIndicator.transform.position = transform.position + distVect;
+            distance = distVect.magnitude; 
 
             yield return new WaitForEndOfFrame();
         }
