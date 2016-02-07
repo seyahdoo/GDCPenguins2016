@@ -13,7 +13,7 @@ public class ScientistCameraBehaviour : MonoBehaviour {
 
     public GameObject TargetObject;
     private Rigidbody _targetRigidBody;
-    private CharacterJoint _targetJoint;
+    private SpringJoint _targetJoint;
 
     public float MaxInteractionDistance = 10000;
     public LayerMask WhatToInteract;
@@ -32,7 +32,7 @@ public class ScientistCameraBehaviour : MonoBehaviour {
     {
 
         _targetRigidBody = TargetIndicator.GetComponent<Rigidbody>();
-        _targetJoint = TargetIndicator.GetComponent<CharacterJoint>();
+        _targetJoint = TargetIndicator.GetComponent<SpringJoint>();
     }
 
 

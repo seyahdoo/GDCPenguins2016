@@ -13,14 +13,23 @@ public class PlayerInputController : MonoBehaviour
 
     private Vector2 MouseCordNow;
     private Vector2 MouseCordLast;
+
+
     public Vector2 MouseDelta;
+    public Vector3 MoveDelta;
+    private Vector3 _positionLast;
 
     public Vector2 ScrollAxis;
 
     public float Mouse_Sensivity = 30;
 
+   
+
     void Update()
     {
+
+        MoveDelta = transform.position - _positionLast;
+
 
         ScrollAxis = Input.mouseScrollDelta;
 
@@ -30,6 +39,7 @@ public class PlayerInputController : MonoBehaviour
 
         CalculateLookDir();
 
+        _positionLast = transform.position;
     }
 
     private void CursorLocking()
