@@ -89,6 +89,10 @@ public class ScientistCameraBehaviour : MonoBehaviour {
         //hj.connectedBody = _targetRigidBody;
         _targetJoint.connectedBody = TargetObject.GetComponent<Rigidbody>();
         _targetJoint.connectedAnchor = Vector3.zero;
+
+        //for onat
+        RoomRotater.Instance.RemoveTagFromObj(_targetJoint.connectedBody);
+
         //Grabbed!
         while (Input.GetButton(PlayerInput.Use))
         {
@@ -110,6 +114,10 @@ public class ScientistCameraBehaviour : MonoBehaviour {
 
         //Detach joint 
         //Destroy(hj); //ToDo what is that??? bunu niye yapıyomki şimdi ben.
+
+        //for onat sensei
+        RoomRotater.Instance.RemoveTagFromObj(_targetJoint.connectedBody);
+
         _targetJoint.connectedBody = null;
 
         //disable target
