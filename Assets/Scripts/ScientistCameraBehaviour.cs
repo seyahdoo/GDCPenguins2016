@@ -4,9 +4,6 @@ using System.Collections;
 using Globals;
 public class ScientistCameraBehaviour : MonoBehaviour {
 
-
-
-
     public GameObject TargetIndicator;
     public Camera PlayerCamera;
     public Transform TargerIndSmoother;
@@ -39,6 +36,7 @@ public class ScientistCameraBehaviour : MonoBehaviour {
     void Update()
     {
 
+        //todo raycast her zaman olucak. elde birsey yokken el havaya kalkma animasyonu olucak
 
         #region Camera Interaction AKA use button interactivity
         if (Input.GetButtonDown(PlayerInput.Use) && (!IsGrabbing))
