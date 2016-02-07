@@ -41,23 +41,33 @@ public class RoomRotater : MonoBehaviour
 	    }
 
 	    float rad = PlayerIC.MouseDelta.x * Mathf.Deg2Rad;
+	    Vector3 movementVector = -PlayerIC.MoveDelta;// - PlayerPos.transform.position;]
+        movementVector.Normalize();
         //Debug.Log(rad);
-	    if (Mathf.Abs(rad) <= 0.2f)
-	    {
-	        return;
-	    }
+        if (Mathf.Abs(rad) <= 0.2f && movementVector.magnitude == 0f) //&& movementVector.magnitude == 0f )
+        {
+            return;
+        }
 
 	    foreach (Rigidbody o in _objects)
 	    {
-            //move
-            Vector3 movementVector = Vector3.zero;
-
             //rotate
-	        Vector3 vec = o.position - PlayerPos.position;
-	        vec.y = 0f;
-            Vector3 vec90Deg = Quaternion.AngleAxis(rad > 0 ? -1 * 90 : 1 * 90, Vector3.up) * vec;
-	        vec90Deg += movementVector;
+	        Vector3 vec;
+	        Vector3 vec90Deg = Vector3.zero;
+            vec = o.position - PlayerPos.position;
+	        if (Mathf.Abs(rad) > 0.2f)
+	        {
+                vec.y = 0f;
+                vec90Deg = Quaternion.AngleAxis(rad > 0 ? -1 * 90 : 1 * 90, Vector3.up) * vec;
+
+	        }
+            if (movementVector.magnitude > float.Epsilon)
+	        {
+                vec90Deg += movementVector * 4f;
+	        }
+            
             Debug.DrawRay(o.position, vec90Deg, Color.red, 0.01f);
+
             o.AddForce(vec90Deg * ForceMultiplier,ForceMode.Impulse);
 	    }
         
