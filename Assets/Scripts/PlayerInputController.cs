@@ -13,7 +13,12 @@ public class PlayerInputController : MonoBehaviour
 
     private Vector2 MouseCordNow;
     private Vector2 MouseCordLast;
+
+
     public Vector2 MouseDelta;
+    public Vector3 MoveDelta;
+
+    private Vector3 _lastPos;
 
     public Vector2 ScrollAxis;
 
@@ -21,6 +26,10 @@ public class PlayerInputController : MonoBehaviour
 
     void Update()
     {
+
+        MoveDelta = transform.position - _lastPos;
+
+        _lastPos = transform.position;
 
         ScrollAxis = Input.mouseScrollDelta;
 
