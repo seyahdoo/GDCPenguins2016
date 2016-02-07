@@ -4,19 +4,23 @@ using System.Collections.Generic;
 
 public class RoomRotater : MonoBehaviour
 {
-
+    private static RoomRotater _instance;
     public PlayerInputController PlayerIC;
     public Transform PlayerPos;
-    //public Rigidbody _rigidbody;    
-    public float forceMultiplier;
+    public float ForceMultiplier;
 
     private bool _ready;
     private List<Rigidbody> _objects;
 
-	// Use this for initialization
+    public static RoomRotater Instance
+    {
+        get { return _instance; }
+    }
+
+    // Use this for initialization
 	void Start ()
 	{
-	    //_rigidbody = GetComponent<Rigidbody>();        
+	    _instance = this;
 	    StartCoroutine(ReadyAfterSecs(2f));
         _objects = new List<Rigidbody>();
 
@@ -35,13 +39,6 @@ public class RoomRotater : MonoBehaviour
 	    {
 	        return;
 	    }
-        //Vector3 pos = new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.x);
-        //
-        //Vector3 torque = transform.up * Torque * -PlayerIC.MouseDelta.x;
-	    //torque += pos;
-	    ////Vector3 t2 = transform.right * Torque * PlayerIC.MouseDelta.y;
-	    ////torque = torque + t2;
-	    //_rigidbody.AddRelativeTorque(torque,ForceMode.Acceleration);
 
 	    float rad = PlayerIC.MouseDelta.x * Mathf.Deg2Rad;
         //Debug.Log(rad);
@@ -52,13 +49,16 @@ public class RoomRotater : MonoBehaviour
 
 	    foreach (Rigidbody o in _objects)
 	    {
+            //move
+            Vector3 movementVector = Vector3.zero;
+
+            //rotate
 	        Vector3 vec = o.position - PlayerPos.position;
+	        vec.y = 0f;
             Vector3 vec90Deg = Quaternion.AngleAxis(rad > 0 ? -1 * 90 : 1 * 90, Vector3.up) * vec;
+	        vec90Deg += movementVector;
             Debug.DrawRay(o.position, vec90Deg, Color.red, 0.01f);
-
-            o.AddForce(vec90Deg * forceMultiplier,ForceMode.Impulse);
-
-            //float v = Mathf.Tan(rad) * vec.magnitude;
+            o.AddForce(vec90Deg * ForceMultiplier,ForceMode.Impulse);
 	    }
         
 	}
@@ -69,12 +69,15 @@ public class RoomRotater : MonoBehaviour
         _ready = true;
     }
 
-    //private IEnumerator FSM()
-    //{
-    //    //PlayerIC.LookDir;
-    //    //PlayerIC.MouseDelta;
-    //    //PlayerIC.MoveDir
-    //
-    //    yield return new WaitForSeconds(0.26f);
-    //}
+    public void RemoveTagFromObj(Rigidbody removeObj)
+    {
+        removeObj.tag = "temp";
+        _objects.Remove(removeObj);
+    }
+
+    public void AddTagToObj(Rigidbody addObj)
+    {
+        addObj.tag = "objs";
+        _objects.Add(addObj);
+    }
 }
