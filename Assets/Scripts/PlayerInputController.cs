@@ -15,11 +15,15 @@ public class PlayerInputController : MonoBehaviour
     private Vector2 MouseCordLast;
     public Vector2 MouseDelta;
 
+    public Vector2 ScrollAxis;
+
     public float Mouse_Sensivity = 30;
 
     void Update()
     {
-        
+
+        ScrollAxis = Input.mouseScrollDelta;
+
         CursorLocking();
 
         CalculateMoveDir();

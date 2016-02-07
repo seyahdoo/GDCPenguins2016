@@ -9,8 +9,11 @@ public class ScientistCameraBehaviour : MonoBehaviour {
 
     public GameObject TargetIndicator;
     public Camera PlayerCamera;
+    public Transform TargerIndSmoother;
 
     public GameObject TargetObject;
+    private Rigidbody _targetRigidBody;
+    private CharacterJoint _targetJoint;
 
     public float MaxInteractionDistance = 10000;
     public LayerMask WhatToInteract;
@@ -21,7 +24,16 @@ public class ScientistCameraBehaviour : MonoBehaviour {
     public Vector3 distVect;
     public float distance;
 
+    public float WheelMultiplier;
+
+
     //TODO are we locking cursor on start?
+    void Awake()
+    {
+
+        _targetRigidBody = TargetIndicator.GetComponent<Rigidbody>();
+        _targetJoint = TargetIndicator.GetComponent<CharacterJoint>();
+    }
 
 
     void Update()
@@ -72,26 +84,35 @@ public class ScientistCameraBehaviour : MonoBehaviour {
         //enable target
         TargetIndicator.SetActive(true);
         TargetIndicator.transform.position = hitPoint;
+        TargerIndSmoother.position = hitPoint;
 
         //attach joint here!
-        //get distance
-        distVect = hitPoint - transform.position;
-        
+        //var hj = TargetObject.AddComponent<HingeJoint>();
+        //hj.connectedBody = _targetRigidBody;
+        _targetJoint.connectedBody = TargetObject.GetComponent<Rigidbody>();
+        _targetJoint.connectedAnchor = Vector3.zero;
         //Grabbed!
         while (Input.GetButton(PlayerInput.Use))
         {
-            Debug.Log("Physicing " + TargetObject.name);
+            //Debug.Log("Physicing " + TargetObject.name);
 
             //then we handle scroll lock delta
             //Input.mouseScrollDelta
             //TargetIndicator.transform.position = transform.position + distVect;
-            distance = distVect.magnitude; 
+            distance = distVect.magnitude;
+            TargerIndSmoother.Translate(Vector3.forward * Input.GetAxis(PlayerInput.MouseWheel) * WheelMultiplier);
+            if (Input.GetAxis(PlayerInput.MouseWheel) != 0)
+            {
+                Debug.Log("scrolled " + Input.GetAxis(PlayerInput.MouseWheel));
+            }
 
             yield return new WaitForEndOfFrame();
         }
         Debug.Log("Grap Ended");
 
         //Detach joint 
+        //Destroy(hj); //ToDo what is that??? bunu niye yapıyomki şimdi ben.
+        _targetJoint.connectedBody = null;
 
         //disable target
         TargetIndicator.SetActive(false);

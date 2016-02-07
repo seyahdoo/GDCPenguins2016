@@ -7,7 +7,7 @@ public class RoomRotater : MonoBehaviour
 
     public PlayerInputController PlayerIC;
     public Transform PlayerPos;
-    private Rigidbody _rigidbody;    
+    //public Rigidbody _rigidbody;    
     public float forceMultiplier;
 
     private bool _ready;
@@ -16,7 +16,7 @@ public class RoomRotater : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-	    _rigidbody = GetComponent<Rigidbody>();        
+	    //_rigidbody = GetComponent<Rigidbody>();        
 	    StartCoroutine(ReadyAfterSecs(2f));
         _objects = new List<Rigidbody>();
 
@@ -44,7 +44,7 @@ public class RoomRotater : MonoBehaviour
 	    //_rigidbody.AddRelativeTorque(torque,ForceMode.Acceleration);
 
 	    float rad = PlayerIC.MouseDelta.x * Mathf.Deg2Rad;
-        Debug.Log(rad);
+        //Debug.Log(rad);
 	    if (Mathf.Abs(rad) <= 0.2f)
 	    {
 	        return;
@@ -56,7 +56,7 @@ public class RoomRotater : MonoBehaviour
             Vector3 vec90Deg = Quaternion.AngleAxis(rad > 0 ? -1 * 90 : 1 * 90, Vector3.up) * vec;
             Debug.DrawRay(o.position, vec90Deg, Color.red, 0.01f);
 
-            o.AddForce(vec90Deg * forceMultiplier,ForceMode.VelocityChange);
+            o.AddForce(vec90Deg * forceMultiplier,ForceMode.Impulse);
 
             //float v = Mathf.Tan(rad) * vec.magnitude;
 	    }

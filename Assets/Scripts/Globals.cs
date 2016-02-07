@@ -17,6 +17,7 @@ namespace Globals
         public static string Jump = "Jump"; //Space
         public static string MouseX = "Mouse X";
         public static string MouseY = "Mouse Y";
+        public static string MouseWheel = "Mouse ScrollWheel";
 
     }
 
