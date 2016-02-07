@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: fe50fa47c9cf60e4a972cc7960186194
+timeCreated: 1454864951
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: acik_dolap
+    100002: bilgisayar
+    100004: dik_kiatap
+    100006: hali
+    100008: kadeh
+    100010: kafalik
+    100012: kapali_dolap
+    100014: kitap
+    100016: komidin
+    100018: lamba
+    100020: opulur
+    100022: sandik
+    100024: sise
+    100026: vazo
+    100028: yatak1
+    100030: //RootNode
+    100032: yatay_kitaplar
+    400000: acik_dolap
+    400002: bilgisayar
+    400004: dik_kiatap
+    400006: hali
+    400008: kadeh
+    400010: kafalik
+    400012: kapali_dolap
+    400014: kitap
+    400016: komidin
+    400018: lamba
+    400020: opulur
+    400022: sandik
+    400024: sise
+    400026: vazo
+    400028: yatak1
+    400030: //RootNode
+    400032: yatay_kitaplar
+    2300000: acik_dolap
+    2300002: bilgisayar
+    2300004: dik_kiatap
+    2300006: hali
+    2300008: kadeh
+    2300010: kafalik
+    2300012: kapali_dolap
+    2300014: kitap
+    2300016: komidin
+    2300018: lamba
+    2300020: opulur
+    2300022: sandik
+    2300024: sise
+    2300026: vazo
+    2300028: yatak1
+    2300030: yatay_kitaplar
+    3300000: acik_dolap
+    3300002: bilgisayar
+    3300004: dik_kiatap
+    3300006: hali
+    3300008: kadeh
+    3300010: kafalik
+    3300012: kapali_dolap
+    3300014: kitap
+    3300016: komidin
+    3300018: lamba
+    3300020: opulur
+    3300022: sandik
+    3300024: sise
+    3300026: vazo
+    3300028: yatak1
+    3300030: yatay_kitaplar
+    4300000: hali
+    4300002: kafalik
+    4300004: yatak1
+    4300006: kapali_dolap
+    4300008: kitap
+    4300010: acik_dolap
+    4300012: sandik
+    4300014: lamba
+    4300016: komidin
+    4300018: sise
+    4300020: kadeh
+    4300022: vazo
+    4300024: bilgisayar
+    4300026: opulur
+    4300028: dik_kiatap
+    4300030: yatay_kitaplar
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 20
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
