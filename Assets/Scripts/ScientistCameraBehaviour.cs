@@ -116,7 +116,7 @@ public class ScientistCameraBehaviour : MonoBehaviour {
         if (pk != null)
         {
             float distance = Vector3.Distance(PuzzleManager.Instance.transform.position, transform.position);
-            if (distance < 2f)
+            if (distance < 3f)
             {
                 PuzzleManager.Instance.PlaceKey(TargetObject.transform);
             }

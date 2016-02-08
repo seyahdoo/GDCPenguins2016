@@ -81,6 +81,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+            m_CharacterController.Move(-Vector3.up*0.97f*Time.deltaTime);
         }
 
 
