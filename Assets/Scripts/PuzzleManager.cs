@@ -14,6 +14,8 @@ public class PuzzleManager : MonoBehaviour
     public Transform PowerSupplySlot;
     public Transform MotherboardSlot;
 
+    public Transform UI;
+
     private List<Transform> _keys;
     private int _successfullyPlacedKeys;
     private bool _puzzleSolved;
@@ -84,5 +86,13 @@ public class PuzzleManager : MonoBehaviour
     public void OnPuzzleSolved()
     {
         //todo
+        UI.gameObject.SetActive(true);
+        StartCoroutine(DelayedStart());
+    }
+
+    private IEnumerator DelayedStart()
+    {
+        yield return new WaitForSeconds(3f);
+        Application.LoadLevel("Start");
     }
 }
