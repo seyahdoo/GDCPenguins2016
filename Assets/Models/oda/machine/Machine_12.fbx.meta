@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 419690e4f72a2a6478575c1bf9a80340
-timeCreated: 1454890447
+guid: c357872b50029e846854c9fb9a52e91c
+timeCreated: 1454891121
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -8,73 +8,69 @@ ModelImporter:
     100000: Base2
     100002: col__Power
     100004: colider_Display
-    100006: colider_pipe1
-    100008: colider_pipe2
-    100010: colider_Soba1
-    100012: colider_usb
-    100014: colidersoba2
-    100016: cpu1
-    100018: cpu_colider
-    100020: display
-    100022: //RootNode
-    100024: Mother1Col_der
-    100026: Mother1Colider
-    100028: motherboard
-    100030: pipe
-    100032: power
-    100034: usb
+    100006: colider_pipe2
+    100008: colider_Soba1
+    100010: colider_usb
+    100012: colidersoba2
+    100014: cpu1
+    100016: cpu_colider
+    100018: display
+    100020: //RootNode
+    100022: Mother1Col_der
+    100024: Mother1Colider
+    100026: motherboard
+    100028: pipe
+    100030: power
+    100032: usb
     400000: Base2
     400002: col__Power
     400004: colider_Display
-    400006: colider_pipe1
-    400008: colider_pipe2
-    400010: colider_Soba1
-    400012: colider_usb
-    400014: colidersoba2
-    400016: cpu1
-    400018: cpu_colider
-    400020: display
-    400022: //RootNode
-    400024: Mother1Col_der
-    400026: Mother1Colider
-    400028: motherboard
-    400030: pipe
-    400032: power
-    400034: usb
+    400006: colider_pipe2
+    400008: colider_Soba1
+    400010: colider_usb
+    400012: colidersoba2
+    400014: cpu1
+    400016: cpu_colider
+    400018: display
+    400020: //RootNode
+    400022: Mother1Col_der
+    400024: Mother1Colider
+    400026: motherboard
+    400028: pipe
+    400030: power
+    400032: usb
     2300000: Base2
     2300002: col__Power
     2300004: colider_Display
-    2300006: colider_pipe1
-    2300008: colider_pipe2
-    2300010: colider_Soba1
-    2300012: colider_usb
-    2300014: colidersoba2
-    2300016: cpu1
-    2300018: cpu_colider
-    2300020: display
-    2300022: Mother1Col_der
-    2300024: Mother1Colider
-    2300026: motherboard
-    2300028: pipe
-    2300030: power
-    2300032: usb
+    2300006: colider_pipe2
+    2300008: colider_Soba1
+    2300010: colider_usb
+    2300012: colidersoba2
+    2300014: cpu1
+    2300016: cpu_colider
+    2300018: display
+    2300020: Mother1Col_der
+    2300022: Mother1Colider
+    2300024: motherboard
+    2300026: pipe
+    2300028: power
+    2300030: usb
     3300000: Base2
     3300002: col__Power
     3300004: colider_Display
-    3300006: colider_pipe1
-    3300008: colider_pipe2
-    3300010: colider_Soba1
-    3300012: colider_usb
-    3300014: colidersoba2
-    3300016: cpu1
-    3300018: cpu_colider
-    3300020: display
-    3300022: Mother1Col_der
-    3300024: Mother1Colider
-    3300026: motherboard
-    3300028: pipe
-    3300030: power
-    3300032: usb
+    3300006: colider_pipe2
+    3300008: colider_Soba1
+    3300010: colider_usb
+    3300012: colidersoba2
+    3300014: cpu1
+    3300016: cpu_colider
+    3300018: display
+    3300020: Mother1Col_der
+    3300022: Mother1Colider
+    3300024: motherboard
+    3300026: pipe
+    3300028: power
+    3300030: usb
     4300000: display
     4300002: colider_Display
     4300004: usb
@@ -84,14 +80,13 @@ ModelImporter:
     4300012: colider_Soba1
     4300014: pipe
     4300016: colider_pipe2
-    4300018: colider_pipe1
-    4300020: power
-    4300022: col__Power
-    4300024: cpu1
-    4300026: cpu_colider
-    4300028: motherboard
-    4300030: Mother1Col_der
-    4300032: Mother1Colider
+    4300018: power
+    4300020: col__Power
+    4300022: cpu1
+    4300024: cpu_colider
+    4300026: motherboard
+    4300028: Mother1Col_der
+    4300030: Mother1Colider
     9500000: //RootNode
   materials:
     importMaterials: 1

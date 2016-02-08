@@ -44,7 +44,6 @@ public class InterfaceManager : MonoBehaviour {
     public void UsbOn()
     {
 
-
     }
 
     public void ScreenOn()
