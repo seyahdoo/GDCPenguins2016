@@ -6,10 +6,10 @@ using System.Collections.Generic;
 public class PuzzleManager : MonoBehaviour
 {
     private static PuzzleManager _instance;
+    public Transform PuzzleCase;
     public Transform CpuSlot;
     public Transform UsbsSlot;
     public Transform PipeSlot;
-    public Transform WiresSlot;
     public Transform DisplaySlot;
     public Transform PowerSupplySlot;
     public Transform MotherboardSlot;
@@ -47,7 +47,6 @@ public class PuzzleManager : MonoBehaviour
 	        CpuSlot,
 	        UsbsSlot,
 	        PipeSlot,
-	        WiresSlot,
 	        DisplaySlot,
 	        PowerSupplySlot,
 	        MotherboardSlot
