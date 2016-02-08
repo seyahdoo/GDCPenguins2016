@@ -41,7 +41,7 @@ public class ScientistCameraBehaviour : MonoBehaviour {
         #region Camera Interaction AKA use button interactivity
         if (Input.GetButtonDown(PlayerInput.Use) && (!IsGrabbing))
         {
-            Debug.Log("Pressed Use, not grabbing now(obviously), Raycasting.");
+            //Debug.Log("Pressed Use, not grabbing now(obviously), Raycasting.");
             //interact from camera!
             Ray ray = PlayerCamera.ScreenPointToRay(
                 new Vector3(
@@ -55,7 +55,7 @@ public class ScientistCameraBehaviour : MonoBehaviour {
 
             if (IsHit)
             {
-                Debug.Log("Its an hit!");
+                //Debug.Log("Its an hit!");
                 TargetObject = hit.transform.gameObject;
                 hitPoint = hit.point;
                 //TargetObject.name = "asdasd";
@@ -77,7 +77,7 @@ public class ScientistCameraBehaviour : MonoBehaviour {
             yield break;
         }
         IsGrabbing = true;
-        Debug.Log("Grabbed! " + TargetObject.name);
+        //Debug.Log("Grabbed! " + TargetObject.name);
 
         //enable target
         TargetIndicator.SetActive(true);
@@ -110,7 +110,18 @@ public class ScientistCameraBehaviour : MonoBehaviour {
 
             yield return new WaitForEndOfFrame();
         }
-        Debug.Log("Grap Ended");
+        //Debug.Log("Grap Ended");
+
+        PuzzleKey pk = TargetObject.GetComponent<PuzzleKey>();
+        if (pk != null)
+        {
+            float distance = Vector3.Distance(PuzzleManager.Instance.transform.position, transform.position);
+            if (distance < 2f)
+            {
+                PuzzleManager.Instance.PlaceKey(TargetObject.transform);
+            }
+            
+        }
 
         //Detach joint 
         //Destroy(hj); //ToDo what is that??? bunu niye yapıyomki şimdi ben.

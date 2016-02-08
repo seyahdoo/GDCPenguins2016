@@ -66,14 +66,17 @@ public class PuzzleManager : MonoBehaviour
             Debug.LogError("wtf");
             return;
         }
-
+        Debug.Log((int)pk.Type);
         Transform temp = _keys[(int) pk.Type];
+        
+        key.parent = temp;
         key.position = temp.position;
         key.rotation = temp.rotation;
 
-        key.tag = "done";
-        key.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-
+        key.tag = "Untagged";
+        Rigidbody rb = key.GetComponent<Rigidbody>();
+        rb.isKinematic = true;
+        rb.freezeRotation = true;
 
         _successfullyPlacedKeys++;
     }

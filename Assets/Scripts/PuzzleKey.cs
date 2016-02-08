@@ -8,7 +8,6 @@ public class PuzzleKey : MonoBehaviour {
         Cpu = 0,
         Usb,
         Pipe,
-        Wires,
         Display,
         PowerSupply,
         Motherboard

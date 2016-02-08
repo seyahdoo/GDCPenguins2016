@@ -81,12 +81,14 @@ public class RoomRotater : MonoBehaviour
 
     public void RemoveTagFromObj(Rigidbody removeObj)
     {
+        if (removeObj == null) return;
         removeObj.tag = "temp";
         _objects.Remove(removeObj);
     }
 
     public void AddTagToObj(Rigidbody addObj)
     {
+        if (addObj == null) return;
         addObj.tag = "objs";
         _objects.Add(addObj);
     }
